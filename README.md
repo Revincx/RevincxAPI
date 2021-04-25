@@ -1,2 +1,3 @@
 # RevincxAPI
-Souce Code for my API site
+
+这是Revincx API站点的源码，同时也是我学Node.js的练习项目。
