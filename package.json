@@ -11,7 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "better-sqlite3": "^7.1.5",
     "express": "^4.17.1",
-    "qr-image": "^3.2.0"
+    "module-alias": "^2.2.2",
+    "qr-image": "^3.2.0",
+    "require-directory": "^2.1.1"
+  },
+  "_moduleAliases": {
+    "@src": "./src"
   }
 }
