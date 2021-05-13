@@ -12,8 +12,11 @@
   "dependencies": {
     "axios": "^0.21.1",
     "better-sqlite3": "^7.1.5",
+    "body-parser": "^1.19.0",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "module-alias": "^2.2.2",
+    "mssql": "^7.0.0",
     "qr-image": "^3.2.0",
     "require-directory": "^2.1.1"
   },

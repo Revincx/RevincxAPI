@@ -2,3 +2,6 @@
 /.idea
 /.git
 test.js
+/src/config.js
+*/test.js
+.env

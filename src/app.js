@@ -1,5 +1,7 @@
 require('module-alias/register')
-const app = require('./router')
-const express = require('express')
+require('dotenv').config({
+    path: '../.env'
+})
+require('@src/router')
 
-app.use(express.static('./public/'))
+// 我这写的什么东西，怎么就两行啊。。。
