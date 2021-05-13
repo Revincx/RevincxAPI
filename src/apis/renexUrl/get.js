@@ -13,7 +13,7 @@ getUrlRouter.get('/:hashStr',async (req,res,next) => {
     }
     let hashStr = req.params.hashStr
     let hash = string62to10(hashStr)
-    let url = await getUrl(hash)[0].url
+    let url = await getUrl(hash).url
     if(url !== null)
     {
         res.redirect(url)
