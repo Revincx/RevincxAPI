@@ -22,7 +22,7 @@ let getUrl = async hash => {
         let result = await req
             .query(`SELECT url FROM [model].[renexUrl] WHERE hash = ${hash}`)
         console.log(result);
-        return result.recordset[0]
+        return result.recordset[0].url
     }
     catch (err)
     {
