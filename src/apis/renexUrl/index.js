@@ -18,13 +18,14 @@ renexUrlRouter.post('/',(async (req,res) => {
         if(sqlRequest.rowsAffected != null && sqlRequest.rowsAffected > 0)
         {
             resBody.code = 200
-            resBody.message = "succeed"
+            resBody.message = "Succeed"
             resBody.urlPath = string10to62(hash)
         }
         else
         {
             resBody.code = 503
-            resBody.message = "创建链接失败"
+            resBody.urlPath = string10to62(hash)
+            resBody.message = "Failed but returned path anyway"
         }
     }
     else {
