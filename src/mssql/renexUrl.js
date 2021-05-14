@@ -25,13 +25,17 @@ let getUrl = async hash => {
         let req = await request()
         let result = await req
             .query(`SELECT url FROM [model].[renexUrl] WHERE hash = ${hash}`)
-        console.log(result);
-        return result.recordset[0].url
+        return {
+            status: "success",
+            url: result.recordset[0].url
+        }
     }
     catch (err)
     {
         console.log(err)
-        return 'SQL SELECT ERROR'
+        return {
+            status: "failed"
+        }
     }
 }
 

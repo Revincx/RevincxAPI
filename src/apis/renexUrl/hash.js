@@ -83,7 +83,6 @@ const text2Hash = text => {
     return Math.floor(murmurhash(text, 1145141919810) / 1000)
 }
 
-console.log(string62to10("2yjB"))
 
 module.exports = {
     text2Hash,
