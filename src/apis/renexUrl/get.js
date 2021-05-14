@@ -13,11 +13,11 @@ getUrlRouter.get('/:hashStr',async (req,res,next) => {
     }
     let hashStr = req.params.hashStr
     let hash = string62to10(hashStr)
-    let url = await getUrl(hash)
-    // let url = "https://t.cn"
-    if(url !== undefined)
+    console.log("Request hash: " + hash);
+    let result = await getUrl(hash)
+    if(result.status === 'success')
     {
-        res.redirect(url)
+        res.redirect(result.url)
     }
     else
     {

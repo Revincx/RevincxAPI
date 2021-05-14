@@ -1,18 +1,22 @@
-// require('module-alias/register')
 const { request } = require('./index.js')
-// const sql = require('mssql')
 
 let addNewUrl = async (hash,url) => {
     try {
-        let req= await request()
-        return await req
+        let req = await request()
+        let result = await req
             .query(`INSERT INTO [model].[renexUrl] (hash,url)
                     VALUES ( ${hash}, '${url}' )`)
+        return {
+            status: 'success',
+            url: result.recordset[0].url
+        }
     }
     catch (err)
     {
         console.log(err)
-        return 'SQL INSERT ERROR'
+        return {
+            status: 'error'
+        }
     }
 }
 
@@ -32,7 +36,7 @@ let getUrl = async hash => {
 }
 
 // (async () => {
-//     let res = await addNewUrl(2, "https://192.168.98.1")
+//     let res = await getUrl(608567)
 //     console.log(res);
 // })()
 

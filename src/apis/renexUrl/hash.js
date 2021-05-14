@@ -54,7 +54,7 @@ const murmurhash = (key, seed) => {
 }
 
 const string10to62 = number => {
-    let chars = '0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ'.split(''),
+    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ'.split(''),
         radix = chars.length,
         quotient = +number,
         arr = [];
@@ -67,7 +67,7 @@ const string10to62 = number => {
 }
 
 const string62to10 = number_code => {
-    let chars = '0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ',
+    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ',
         radix = chars.length;
     number_code = String(number_code);
     let len = number_code.length,
@@ -82,6 +82,8 @@ const string62to10 = number_code => {
 const text2Hash = text => {
     return Math.floor(murmurhash(text, 1145141919810) / 1000)
 }
+
+console.log(string62to10("2yjB"))
 
 module.exports = {
     text2Hash,
