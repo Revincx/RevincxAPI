@@ -8,7 +8,7 @@ let addNewUrl = async (hash,url) => {
                     VALUES ( ${hash}, '${url}' )`)
         return {
             status: 'success',
-            url: result.recordset[0].url
+            rowsAffected: result.rowsAffected
         }
     }
     catch (err)

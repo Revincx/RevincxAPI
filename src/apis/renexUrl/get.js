@@ -5,7 +5,6 @@ const { getUrl } = require('@src/mssql/renexUrl.js')
 const getUrlRouter = express.Router()
 
 getUrlRouter.get('/:hashStr',async (req,res,next) => {
-    // console.log(req.hostname);
     if(req.hostname !== 'renex.me')
     {
         next()
@@ -21,7 +20,7 @@ getUrlRouter.get('/:hashStr',async (req,res,next) => {
     }
     else
     {
-        res.status(503)
+        res.status(400)
         res.send("Get url failed")
     }
 })

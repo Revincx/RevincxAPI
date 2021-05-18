@@ -54,7 +54,7 @@ const murmurhash = (key, seed) => {
 }
 
 const string10to62 = number => {
-    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ'.split(''),
+    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
         radix = chars.length,
         quotient = +number,
         arr = [];
@@ -67,7 +67,7 @@ const string10to62 = number => {
 }
 
 const string62to10 = number_code => {
-    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ',
+    let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
         radix = chars.length;
     number_code = String(number_code);
     let len = number_code.length,
