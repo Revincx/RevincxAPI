@@ -1,11 +1,11 @@
 const { request } = require('./index.js')
 
-let addNewUrl = async (hash,url) => {
+let addNewUrl = async (hash,url,ip) => {
     try {
         let req = await request()
         let result = await req
             .query(`INSERT INTO [model].[renexUrl] (hash,url)
-                    VALUES ( ${hash}, '${url}' )`)
+                    VALUES ( ${hash}, '${url}','${ip}',getDate() + '08:00' )`)
         return {
             status: 'success',
             rowsAffected: result.rowsAffected

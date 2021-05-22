@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { text2Hash,string10to62 } = require('./hash.js')
-const { addNewUrl } = require('@src/mssql/renexUrl.js')
+const { addNewUrl,getUrl } = require('@src/mssql/renexUrl.js')
 
 let renexUrlRouter = new express.Router();
 
@@ -13,7 +13,7 @@ renexUrlRouter.post('/',(async (req,res) => {
     if(reqBody.action === "new" && reqBody.url != null)
     {
         let hash = text2Hash(reqBody.url)
-        let sqlRequest = await addNewUrl(hash,reqBody.url)
+        let sqlRequest = await addNewUrl(hash,reqBody.url,req.ip)
         res.status(200)
         if(sqlRequest.rowsAffected != null && sqlRequest.rowsAffected > 0)
         {
@@ -23,7 +23,7 @@ renexUrlRouter.post('/',(async (req,res) => {
         }
         else
         {
-            resBody.code = 503
+            resBody.code = 500
             resBody.urlPath = string10to62(hash)
             resBody.message = "Failed but returned path anyway"
         }
