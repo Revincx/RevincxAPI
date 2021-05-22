@@ -4,7 +4,7 @@ let addNewUrl = async (hash,url,ip) => {
     try {
         let req = await request()
         let result = await req
-            .query(`INSERT INTO [model].[renexUrl] (hash,url)
+            .query(`INSERT INTO [model].[renexUrl] (hash,url,ip,createTime)
                     VALUES ( ${hash}, '${url}','${ip}',getDate() + '08:00' )`)
         return {
             status: 'success',
