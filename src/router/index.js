@@ -7,7 +7,7 @@ const getUrlRouter = require('@src/apis/renexUrl/get.js')
 
 let port = process.env.PORT || 8081
 
-app.use(express.static('./public/'))
+app.use(express.static('./docs'))
 
 
 app.use('/',getUrlRouter)
